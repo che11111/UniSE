@@ -1,0 +1,34 @@
+.config-management-item {
+    display: flex;
+    justify-content: space-around; /* Distribute space around items */
+    align-items: center;
+    margin-top: 15px; /* Add some space above this section */
+}
+
+.config-management-item .neumorphic-button {
+    padding: 8px; /* Smaller padding for icon buttons */
+    width: 50px; /* Fixed width for a more circular/square look if desired */
+    height: 50px; /* Fixed height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.config-management-item .neumorphic-button img {
+    width: 24px; /* Adjust icon size as needed */
+    height: 24px;
+}
+
+/* Hide the actual file input */
+#import-config-file {
+    display: none;
+}
+
+.config-title {
+    font-weight: 500;
+    margin-bottom: 10px; /* Space below the title */
+    color: var(--text-color-light);
+    text-align: left; /* Align to the start of the settings panel */
+    width: 100%; /* Ensure it takes full width to align left */
+    padding-left: 0; /* Reset any padding if inherited */
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniSE - Unified Search Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/scrollbar.css">
+    <link rel="stylesheet" href="./src/css/theme-toggle.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./src/favicon/favicon-180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./src/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./src/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./src/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="./src/favicon/favicon-16x16.ico">
+    <link rel="shortcut icon" href="./src/favicon/favicon-32x32.ico">
+    <link rel="shortcut icon" href="./src/favicon/favicon-48x48.ico">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="top-bar">
+                <div class="logo-title-container">
+                    <img src="src/logo/UniSE.png" alt="UniSE Logo" id="app-logo">
+                    <h1 id="app-title">UniSE</h1>
+                </div>
+                <button id="settings-button" class="neumorphic-button">
+                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23333'%3E%3Cpath d='M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.25C14.34,2.01,14.12,1.85,13.87,1.85h-3.74 c-0.25,0-0.47,0.16-0.53,0.4L9.19,4.62C8.6,4.86,8.07,5.18,7.57,5.56L5.18,4.6C4.96,4.52,4.71,4.6,4.59,4.81L2.67,8.13 c-0.11,0.2-0.06,0.47,0.12,0.61l2.03,1.58C4.78,10.66,4.76,10.97,4.76,11.3c0,0.32,0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.43,2.37 c0.06,0.24,0.28,0.4,0.53,0.4h3.74c0.25,0,0.47-0.16,0.53-0.4l0.43-2.37c0.59-0.24,1.12-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.2,0.06-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z'/%3E%3C/svg%3E" alt="Settings">
+                    <span data-translate="settings">Settings</span>
+                </button>
+            </div>
+            <div id="current-search-engine-logo-container">
+                <!-- Selected search engine logo will be displayed here -->
+            </div>
+        </header>
+
+        <main>
+
+            <div class="search-bar-container neumorphic-search-bar">
+                <input type="text" id="search-input" placeholder="Search..." data-translate-placeholder="searchPlaceholder">
+                <button id="search-button" class="neumorphic-button">
+                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23333'%3E%3Cpath d='M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3C/svg%3E" alt="Search">
+                </button>
+            </div>
+            <div id="search-engine-icons-bar">
+                <!-- Search engine icons will be dynamically added here -->
+            </div>
+            <div id="search-suggestions">
+                <!-- Search suggestions can be added here -->
+            </div>
+        </main>
+
+        <div id="settings-panel" class="settings-panel neumorphic-panel">
+            <div class="settings-header">
+                <h2 data-translate="settingsTitle">Settings</h2>
+                <button id="close-settings-button" class="neumorphic-button close-button">&times;</button>
+            </div>
+            <div class="settings-content">
+                <div class="setting-item">
+                    <label for="theme-toggle" data-translate="theme">Theme:</label>
+                    <button id="theme-toggle" class="neumorphic-button"></button>
+                </div>
+                <div class="setting-item">
+                    <label for="language-select" data-translate="language">Language:</label>
+                    <select id="language-select" class="neumorphic-select">
+                        <option value="en-US">English (US)</option>
+                        <option value="en-GB">English (UK)</option>
+                        <option value="zh-CN">中文 (简体)</option>
+                        <option value="zh-TW">中文 (繁體)</option>
+                        <option value="fr-FR">Français</option>
+                        <option value="ru-RU">Русский</option>
+                        <option value="es-ES">Español</option>
+                        <option value="ar-SA">العربية</option>
+                        <option value="it-IT">Italiano</option>
+                        <option value="pt-PT">Português</option>
+                        <option value="ja-JP">日本語</option>
+                        <option value="de-DE">Deutsch</option>
+                        <option value="ko-KR">한국어</option>
+                        <option value="nl-NL">Nederlands</option>
+                        <option value="tr-TR">Türkçe</option>
+                        <option value="hi-IN">हिन्दी</option>
+                        <option value="th-TH">ไทย</option>
+                        <option value="vi-VN">Tiếng Việt</option>
+                        <option value="id-ID">Bahasa Indonesia</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <h3 data-translate="searchSources">Search Sources</h3>
+                    <div id="search-sources-list">
+                        <!-- Search sources will be listed here -->
+                    </div>
+                    <button id="add-source-button" class="neumorphic-button" data-translate="addSource">Add New Source</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Moved modal outside of settings panel -->
+        <div id="edit-source-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="edit-source-title" aria-hidden="true" tabindex="-1">
+            <div class="modal-content neumorphic-panel" role="document">
+                <h4 data-translate="editSourceTitle">Edit Search Source</h4>
+                <label for="edit-source-name" data-translate="sourceName">Name:</label>
+                <input type="text" id="edit-source-name" class="neumorphic-input">
+                <label for="edit-source-url" data-translate="sourceUrl">URL (use %s for query):</label>
+                <input type="text" id="edit-source-url" class="neumorphic-input">
+                <label for="edit-source-favicon" data-translate="sourceFavicon">Favicon URL:</label>
+                <input type="text" id="edit-source-favicon" class="neumorphic-input">
+                <label for="edit-source-logo" data-translate="sourceLogo">Text Logo Path:</label>
+                <input type="text" id="edit-source-logo" class="neumorphic-input">
+                <input type="hidden" id="edit-source-id">
+                <button id="save-source-button" class="neumorphic-button" data-translate="save">Save</button>
+                <button id="cancel-edit-button" class="neumorphic-button" data-translate="cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./src/js/search-engines.js"></script>
+    <script src="./src/js/localization.js"></script>
+    <script src="./src/js/settings.js"></script>
+    <script src="./src/js/script.js"></script>
+</body>
+</html>
