@@ -1,0 +1,33 @@
+/* 侧边栏滚动条样式 */
+.settings-panel::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.settings-panel::-webkit-scrollbar-track {
+    background: var(--bg-color-light);
+    border-radius: 4px;
+}
+
+.settings-panel::-webkit-scrollbar-thumb {
+    background: var(--primary-color-light);
+    border-radius: 4px;
+    transition: background var(--transition-speed);
+}
+
+.settings-panel::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color-dark);
+}
+
+/* 暗色主题适配 */
+body.dark-theme .settings-panel::-webkit-scrollbar-track {
+    background: var(--bg-color-dark);
+}
+
+body.dark-theme .settings-panel::-webkit-scrollbar-thumb {
+    background: var(--primary-color-dark);
+}
+
+body.dark-theme .settings-panel::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color-light);
+}

@@ -1,0 +1,59 @@
+/* Neumorphic Theme Toggle Switch */
+#theme-toggle {
+  position: relative;
+  width: 64px;
+  height: 32px;
+  border-radius: 16px;
+  background: #e0e0e0;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+#theme-toggle::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1),
+              -1px -1px 3px rgba(255, 255, 255, 0.8);
+}
+
+/* Dark mode styles */
+.dark-theme #theme-toggle {
+  background: #2d2d2d;
+  box-shadow: 3px 3px 6px #1f1f1f, -3px -3px 6px #3b3b3b;
+}
+
+.dark-theme #theme-toggle::after {
+  transform: translateX(32px);
+  background: linear-gradient(145deg, #3a3a3a, #333333);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+              -1px -1px 3px rgba(70, 70, 70, 0.5);
+}
+
+/* Hide default button text */
+#theme-toggle span {
+  display: none;
+}
+
+/* Accessibility focus styles */
+#theme-toggle:focus {
+  outline: 2px solid #4d90fe;
+  outline-offset: 2px;
+}
+
+/* Active/pressed state */
+#theme-toggle:active::after {
+  width: 28px;
+  transition: width 0.2s ease;
+}

@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "UniSE Page",
+  "version": "1.0",
+  "description": "Open a meta search engine page.",
+  "permissions": [
+    "activeTab"
+  ],
+  "action": {
+    "default_icon": {
+      "16": "./UniSE.png",
+      "32": "./UniSE.png",
+      "48": "./UniSE.png",
+      "128": "./UniSE.png"
+    },
+    "default_title": "Open UniSE Page"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "./UniSE.png",
+    "32": "./UniSE.png",
+    "48": "./UniSE.png",
+    "128": "./UniSE.png"
+  }
+}
